@@ -1,0 +1,11 @@
+git log
+
+git status
+
+git add .
+
+git commit -m "Commit Message Here"
+
+git push
+
+git pull
