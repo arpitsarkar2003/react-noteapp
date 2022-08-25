@@ -6,23 +6,23 @@ export class Header extends Component {
             <div>
                 {/* <input type="search" placeholder="Search" />
                <button className="btn btn-primary"></button> */}
-                {/* <div class="input-group">
-                    <input type="search" class="rounded" placeholder="Search Note's"/>
-                    <button type="button" class="btn btn-outline-primary">search</button>
+                {/* <div className="input-group">
+                    <input type="search" className="rounded" placeholder="Search Note's"/>
+                    <button type="button" className="btn btn-outline-primary">search</button>
                 </div> */}
-                <nav class="navbar navbar-light bg-light">
-                    <div class="container-fluid">
-                        <a class="navbar-brand">Note</a>
-                        <form class="d-flex input-group w-auto">
+                <nav className="navbar navbar-light bg-light">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href='/'>Note</a>
+                        <form className="d-flex input-group w-auto">
                             <input
                                 type="search"
-                                class="form-control rounded"
+                                className="form-control rounded"
                                 placeholder="Search"
                                 aria-label="Search"
                                 aria-describedby="search-addon"
                             />
-                            <span class="input-group-text border-0" id="search-addon">
-                                <i class="fas fa-search"></i>
+                            <span className="input-group-text border-0" id="search-addon">
+                                <i className="fas fa-search"></i>
                             </span>
                         </form>
                     </div>
