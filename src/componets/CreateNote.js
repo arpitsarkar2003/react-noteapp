@@ -18,7 +18,7 @@ function CreateNote(props) {
     console.log(note);
   }
   const addHandel = (e)=> {
-    e.Preventdefault(e);
+    e.Preventdefault();
     props.passnote(note);
   }
   return (
