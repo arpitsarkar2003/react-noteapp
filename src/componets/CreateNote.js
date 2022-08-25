@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import { v4 } from 'uuid'
 
 function CreateNote(props) {
   const [note , setnote] = useState({
+    uuid: v4(),
     title: "",
     description: "",
   });
+
+  
 
   const SubmitHandel=(event)=> {
     const {name , value} = event.target;
@@ -15,11 +19,21 @@ function CreateNote(props) {
         [name]:value,
       };
     })
-    console.log(note);
   }
   const addHandel = (e)=> {
-    e.Preventdefault();
-    props.passnote(note);
+    e.preventDefault();
+    if (props.update) {
+      props.setUpdate(false);
+    } else {
+      props.passnote(note);
+    }
+
+    setnote({
+      uuid: v4(),
+      title: "",
+      description: "",
+    });
+    
   }
   return (
     <>
@@ -32,7 +46,7 @@ function CreateNote(props) {
           <div className="form-group  my-3">
             <textarea type="password" className="form-control h-36" name='description' id="Des" onChange={SubmitHandel} value={note.description} placeholder="Enter Description" />
           </div>
-          <button className="border p-2 btn hover:bg-blue-700 hover:text-white" onClick={addHandel}>Submit</button>
+          <button className="border p-2 btn hover:bg-blue-700 hover:text-white w-20" onClick={addHandel}>{props.update ? "Edit" : "Submit"}</button>
           </div>
         </form>
     </>
